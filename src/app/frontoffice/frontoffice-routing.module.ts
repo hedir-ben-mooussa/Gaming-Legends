@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FrontofficeComponent } from './frontoffice.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path : '', component : FrontofficeComponent,children:[]}
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

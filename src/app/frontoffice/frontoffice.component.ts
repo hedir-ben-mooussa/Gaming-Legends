@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-frontoffice',
-  imports: [],
+  standalone: false,
   templateUrl: './frontoffice.component.html',
   styleUrl: './frontoffice.component.scss'
 })
