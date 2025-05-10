@@ -1,0 +1,39 @@
+// .fig1{
+//     background-image: linear-gradient(to right, #ffffff, #deddef, #bcbde0, #969ed1, #6c81c3, #5470bd, #3860b7, #0050b0, #0045af, #0038ad, #002aa9, #0018a4);
+    
+// }
+
+// .container{
+//     border-radius: 60px;
+// }
+// .home-bg {
+//     max-width: 100%;
+//     height: auto;
+//     padding-left: 50%;
+//     padding-top: 5%;
+// }
+.intro-slide{
+    background-image: linear-gradient(to right, #ffffff, #deddef, #bcbde0, #969ed1, #6c81c3, #5470bd, #3860b7, #0050b0, #0045af, #0038ad, #002aa9, #0018a4);
+
+}
+.intro-slide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Adds spacing between text and image */
+}
+
+.intro-slide img {
+    max-width: 50%; /* Controls image width */
+    height: auto; /* Maintains aspect ratio */
+    order: 2; /* Moves image to the right */
+
+    padding-top: 5%;
+}
+
+.intro-content {
+    flex: 1; /* Takes remaining space */
+    text-align: left; /* Aligns text to the left */
+    padding-left: 20px; /* Adds spacing from the left edge */
+}
+
