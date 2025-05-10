@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FrontofficeComponent } from './frontoffice/frontoffice.component';
 
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet
