@@ -1,0 +1,73 @@
+<div class="container">
+  <h1>user List</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>password</th>
+        <th>email</th>
+        <th>role</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.username }}</td>
+        <td>{{ user.password }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        
+        <td>
+          <button class="delete-button" (click)="deleteUser(user.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="add-button" (click)="openModal()">Add user</button>
+</div>
+
+<!-- Modal -->
+<div class="modal" *ngIf="showModal">
+  <form class="modal-content" [formGroup]="form" (ngSubmit)="addUser()">
+    <h2>Add New user</h2>
+
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" formControlName="username" />
+    </div>
+
+    <div class="form-group">
+      <label>password:</label>
+      <input type="password" formControlName="password" />
+    </div>
+
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="email" formControlName="email" />
+    </div>
+
+ 
+   <div class="form-group">
+  <label>Role:</label>
+  <select formControlName="role">
+    <option [ngValue]="null" disabled selected>Select a role</option>
+    <option [ngValue]="'admin'">Admin</option>
+    <option [ngValue]="'user'">User</option>
+  </select>
+</div>
+
+    <!-- <div class="form-group">
+        <label>Category:</label>
+        <input type="text" formControlName="category" />
+        </div> -->
+
+    <div class="form-actions">
+      <button class="cancel" (click)="closeModal()">Cancel</button>
+      <button class="save" type="submit">Save</button>
+    </div>
+  </form>
+</div>

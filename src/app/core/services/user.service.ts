@@ -8,7 +8,7 @@ import { User } from '../models/user';
 })
 export class UserService {
 
-  private baseUrl = 'http://localhost:8080/user'; // Adjust backend URL if needed
+  private baseUrl = 'http://localhost:8081/SpringMVC/users'; // Adjust backend URL if needed
 
   constructor(private http: HttpClient) {}
 

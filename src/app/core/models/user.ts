@@ -3,6 +3,6 @@ export interface User {
     username: string;
     password: string;
     email: string;
-    role: string; // e.g. "ADMIN" or "CUSTOMER"
+    role: 'admin' | 'user';
+    isActive:boolean
   }
-  

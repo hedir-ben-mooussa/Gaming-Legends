@@ -8,7 +8,7 @@ import { Product } from '../models/product';
 })
 export class ProductService {
 
-  private baseUrl = 'http://localhost:8080/product'; // adjust if your backend runs on a different port
+  private baseUrl = 'http://localhost:8081/SpringMVC/product'; // adjust if your backend runs on a different port
 
   constructor(private http: HttpClient) { }
 

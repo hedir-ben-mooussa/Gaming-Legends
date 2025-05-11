@@ -1,0 +1,76 @@
+<div class="container">
+  <h1>Product List</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price ($)</th>
+        <th>Quantity</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product?.category?.name || "-" }}</td>
+        <td>
+          <button class="delete-button" (click)="deleteProduct(product.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="add-button" (click)="openModal()">Add Product</button>
+</div>
+
+<!-- Modal -->
+<div class="modal" *ngIf="showModal">
+  <form class="modal-content" [formGroup]="form" (ngSubmit)="addProduct()">
+    <h2>Add New Product</h2>
+
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" formControlName="name" />
+    </div>
+
+    <div class="form-group">
+      <label>Description:</label>
+      <input type="text" formControlName="description" />
+    </div>
+
+    <div class="form-group">
+      <label>Price:</label>
+      <input type="number" formControlName="price" />
+    </div>
+
+    <div class="form-group">
+      <label>Quantity:</label>
+      <input type="number" formControlName="quantity" />
+    </div>
+    <div class="form-group">
+      <label>Category:</label>
+      <select formControlName="category">
+        <option [ngValue]="null" disabled selected>Select a category</option>
+        <option *ngFor="let cat of categories" [ngValue]="cat">
+          {{ cat.name }}
+        </option>
+      </select>
+    </div>
+    <!-- <div class="form-group">
+        <label>Category:</label>
+        <input type="text" formControlName="category" />
+        </div> -->
+
+    <div class="form-actions">
+      <button class="cancel" (click)="closeModal()">Cancel</button>
+      <button class="save" type="submit">Save</button>
+    </div>
+  </form>
+</div>

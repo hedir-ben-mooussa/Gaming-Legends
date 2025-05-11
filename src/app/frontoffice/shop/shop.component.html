@@ -21,7 +21,7 @@
               <div class="toolbox">
                 <div class="toolbox-left">
                   <div class="toolbox-info">
-                    Showing <span>9 of 56</span> Products
+                     <span>{{products.length}}</span> Products
                   </div><!-- End .toolbox-info -->
                 </div><!-- End .toolbox-left -->
 
@@ -82,9 +82,9 @@
                 </div><!-- End .toolbox-right -->
               </div><!-- End .toolbox -->
               
-              <ng-container *ngfor="let product of products">
+              <div *ngFor="let product of products">
                 <app-card [product]="product"></app-card>
-              </ng-container>
+              </div>
             
                     
 

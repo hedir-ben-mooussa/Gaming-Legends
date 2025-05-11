@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>Category List</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.name }}</td>
+
+        <td>
+          <button class="delete-button" (click)="delete(category.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="add-button" (click)="openModal()">Add category</button>
+</div>
+
+<!-- Modal -->
+<div class="modal" *ngIf="showModal">
+  <form class="modal-content" [formGroup]="form" (ngSubmit)="add()">
+    <h2>Add New category</h2>
+
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" formControlName="name" />
+    </div>
+
+    <!-- <div class="form-group">
+        <label>Category:</label>
+        <input type="text" formControlName="category" />
+        </div> -->
+
+    <div class="form-actions">
+      <button class="cancel" (click)="closeModal()">Cancel</button>
+      <button class="save" type="submit">Save</button>
+    </div>
+  </form>
+</div>

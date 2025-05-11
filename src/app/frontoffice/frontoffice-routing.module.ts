@@ -6,14 +6,17 @@ import { ShopComponent } from './shop/shop.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { HomeComponent } from './home/home.component';
 import { BuyProductComponent } from './buy-product/buy-product.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 const routes: Routes = [
   {path : '', component : FrontofficeComponent,children:[
     {path : 'shop', component: ShopComponent},
-  {path : 'shoppingList' , component : ShoppingListComponent},
+  {path : 'cart' , component : ShoppingListComponent},
   {path : 'home' , component : HomeComponent},
-  {path : 'addProduct', component : BuyProductComponent}
+  {path : 'addProduct', component : BuyProductComponent},
+  {path : 'checkout', component : CheckoutComponent}
+
   ]},
   
   

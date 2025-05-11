@@ -8,7 +8,7 @@ import { Order } from '../models/order';
 })
 export class OrderService {
 
-  private baseUrl = 'http://localhost:8080/order'; 
+  private baseUrl = 'http://localhost:8081/SpringMVC/order'; 
 
   constructor(private http: HttpClient) {}
 
