@@ -9,8 +9,11 @@ import { User } from '../models/user';
 export class UserService {
 
   private baseUrl = 'http://localhost:8081/SpringMVC/users'; // Adjust backend URL if needed
+  url: string
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.url = this.baseUrl
+  }
 
   // Get all users
   getAllUsers(): Observable<User[]> {
@@ -30,5 +33,10 @@ export class UserService {
   // Delete user by ID
   deleteUser(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
+  //new
+
+  login(form:any){
+    return this.http.post(`${this.url}/login`,form);
   }
 }

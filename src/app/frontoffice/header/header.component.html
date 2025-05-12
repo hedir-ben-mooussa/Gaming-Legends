@@ -33,12 +33,12 @@
              
             </li>
             <li>
-              <a href="product.html" class="sf-with-ul">Product</a>
+              <a [routerLink]="'/aboutUs'" class="sf-with-ul">About Us</a>
 
             
             </li>
             <li>
-              <a href="#" class="sf-with-ul">Pages</a>
+              <a [routerLink]="'/ContactUs'" class="sf-with-ul">Contact Us</a>
 
               <ul>
                 <li>
@@ -120,11 +120,7 @@
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="elements-list.html" class="sf-with-ul">Elements</a>
-
-              
-            </li>
+            
           </ul>
           <!-- End .menu -->
         </nav>
@@ -154,10 +150,19 @@
           <!-- End .dropdown-menu -->
         </div>
         <!-- End .cart-dropdown -->
+        
+    
+       
+
       </div>
       <!-- End .header-right -->
+       <a [routerLink]="'/login'" class="btn btn-primary btn-round login-btn">
+  <i class="icon-user"></i> Login
+</a>
+       
     </div>
     <!-- End .container -->
+     
   </div>
   <!-- End .header-middle -->
 </header>

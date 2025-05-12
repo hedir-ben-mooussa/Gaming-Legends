@@ -8,9 +8,9 @@ import { Order } from '../models/order';
 })
 export class OrderService {
 
-  private baseUrl = 'http://localhost:8081/SpringMVC/order'; 
+  private baseUrl = 'http://localhost:8081/SpringMVC/orders';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // Get all orders
   getAllOrders(): Observable<Order[]> {
@@ -24,11 +24,14 @@ export class OrderService {
 
   // Create a new order
   createOrder(order: Order): Observable<Order> {
-    return this.http.post<Order>(`${this.baseUrl}/id`, order);
+    return this.http.post<Order>(`${this.baseUrl}`, order);
   }
 
   // Delete order by ID
   deleteOrderById(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
+  changeToCompleted(id: number) {
+    return this.http.patch<void>(`${this.baseUrl}/complete-order/${id}`, {});
   }
 }

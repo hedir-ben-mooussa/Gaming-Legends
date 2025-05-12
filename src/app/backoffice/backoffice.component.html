@@ -14,31 +14,30 @@
     <span class="text">AdminHub</span>
   </a>
   <ul class="side-menu top">
-    <li class="active">
+    <li  routerLinkActive="active">
       <a [routerLink]="'/admin/dashboard'">
         <i class="bx bxs-dashboard bx-sm"></i>
         <span class="text">Dashboard</span>
       </a>
     </li>
-    <li>
+    <li routerLinkActive="active">
       <a [routerLink]="'/admin/products'">
         <i class="bx bxs-shopping-bag-alt bx-sm"></i>
         <span class="text">Products List</span>
       </a>
     </li>
-    <li>
-      <a  [routerLink]="'/admin/categories'">
+    <li routerLinkActive="active">
+      <a [routerLink]="'/admin/categories'">
         <i class="bx bxs-doughnut-chart bx-sm"></i>
         <span class="text">Categories List</span>
       </a>
     </li>
-    <li>
+    <li routerLinkActive="active">
       <a [routerLink]="'/admin/users'">
         <i class="bx bxs-group bx-sm"></i>
         <span class="text">Users List</span>
       </a>
     </li>
-    
   </ul>
   <ul class="side-menu bottom">
     <li>
@@ -107,10 +106,10 @@
   </nav>
   <!-- NAVBAR -->
 </section>
-  <!-- MAIN -->
-  <main>
-    <router-outlet></router-outlet>
-  </main>
-  <!-- MAIN -->
+<!-- MAIN -->
+<main>
+  <router-outlet></router-outlet>
+</main>
+<!-- MAIN -->
 
 <!-- CONTENT -->

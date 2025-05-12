@@ -14,11 +14,6 @@ export class ListUsersComponent {
 users: User[] = [];
 
   showModal = false;
-    //   username: string;
-    // password: string;
-    // email: string;
-    // role: 'admin' | 'user';
-    // isActive:boolean
   form: FormGroup
   constructor(private UserService: UserService,  private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({

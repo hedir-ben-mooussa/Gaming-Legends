@@ -16,7 +16,8 @@ import { ListUsersComponent } from './list-users/list-users.component';
     BackofficeComponent,
     ListProductsComponent,
     ListCategoryComponent,
-    ListUsersComponent
+    ListUsersComponent,
+    
   ],
   imports: [
     CommonModule,

@@ -5,19 +5,31 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>password</th>
         <th>email</th>
         <th>role</th>
-        
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
         <td>{{ user.username }}</td>
-        <td>{{ user.password }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.role }}</td>
-        
+        <td>
+          <span
+            [ngStyle]="{
+              'height.px': 10,
+              'width.px': 10,
+              'background-color': user.active ? 'green' : 'red',
+              'border-radius': '50%',
+              display: 'inline-block',
+              'margin-right': '6px'
+            }"
+          >
+          </span>
+          {{ user.active ? "Active" : "Inactive" }}
+        </td>
+
         <td>
           <button class="delete-button" (click)="deleteUser(user.id)">
             Delete
@@ -50,15 +62,14 @@
       <input type="email" formControlName="email" />
     </div>
 
- 
-   <div class="form-group">
-  <label>Role:</label>
-  <select formControlName="role">
-    <option [ngValue]="null" disabled selected>Select a role</option>
-    <option [ngValue]="'admin'">Admin</option>
-    <option [ngValue]="'user'">User</option>
-  </select>
-</div>
+    <div class="form-group">
+      <label>Role:</label>
+      <select formControlName="role">
+        <option [ngValue]="null" disabled selected>Select a role</option>
+        <option [ngValue]="'admin'">Admin</option>
+        <option [ngValue]="'user'">User</option>
+      </select>
+    </div>
 
     <!-- <div class="form-group">
         <label>Category:</label>

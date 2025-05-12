@@ -26,8 +26,9 @@ export class CartService {
 
   private saveCart(cart: CartItem[]): void {
     localStorage.setItem(CART_KEY, JSON.stringify(cart));
-    this.cartSubject.next(cart); // Notify subscribers
+    this.cartSubject.next(cart); 
   }
+  
 
   getCart(): CartItem[] {
     return this.cartSubject.getValue();

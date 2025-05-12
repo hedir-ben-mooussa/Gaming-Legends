@@ -12,6 +12,9 @@ import { LoginComponent } from './login/login.component';
 import { CardComponent } from './card/card.component';
 import { BuyProductComponent } from './buy-product/buy-product.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -26,10 +29,14 @@ import { CheckoutComponent } from './checkout/checkout.component';
     CardComponent,
     BuyProductComponent,
     CheckoutComponent,
+    AboutComponent,
+    ContactComponent,
+    
   ],
   imports: [
     CommonModule,
-    FrontofficeRoutingModule
+    FrontofficeRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class FrontofficeModule { }
